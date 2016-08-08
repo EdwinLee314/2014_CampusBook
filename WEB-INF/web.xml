@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>bookshop</display-name>
+	<!-- Define the controller servlet -->
+  <servlet>
+    <servlet-name>ControllerServlet</servlet-name>
+    <servlet-class>ControllerServlet</servlet-class>
+
+    <!-- Define initial parameters that will be loaded into 
+       the ServletContext object in the controller servlet -->
+    <init-param>
+      <param-name>base</param-name>
+      <param-value>http://localhost:8080/bookshop/servlet/ControllerServlet</param-value>
+    </init-param>
+		<init-param>
+      <param-name>asset</param-name>
+      <param-value>http://localhost:8080/bookshop/jsp</param-value>
+    </init-param>
+    <init-param>
+      <param-name>jdbcDriver</param-name>
+      <param-value>com.mysql.jdbc.Driver</param-value>
+    </init-param>
+    <init-param>
+      <param-name>dbUrl</param-name>
+      <param-value>jdbc:mysql://127.0.0.1/bookshop</param-value>
+    </init-param>
+    <init-param>
+      <param-name>dbUserName</param-name>
+      <param-value>root</param-value>
+    </init-param>
+    <init-param>
+      <param-name>dbPassword</param-name>
+      <param-value>1234</param-value>
+    </init-param>
+  </servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ControllerServlet </servlet-name>
+		<url-pattern>/servlet/ControllerServlet</url-pattern>
+	</servlet-mapping>
+</web-app>
